@@ -11,6 +11,7 @@ namespace BackendCodes.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
+        //private readonly DbContext _db;
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -24,6 +25,11 @@ namespace BackendCodes.Controllers
         }
 
         [HttpGet]
+        //public ActionResult<model> GetList()
+        //{
+        //    var variabl = db.
+        //    return variabl;
+        //}
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();

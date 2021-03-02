@@ -10,6 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BackendCodes.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BackendCodes
 {
@@ -26,6 +28,9 @@ namespace BackendCodes
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<AdventureWorksLT2019Context>(options => {
+                options.UseSqlServer("Data Source=DESKTOP-M5EDAUC\\COFFEE;Initial Catalog=AdventureWorksLT2019;User ID=sa;Password=123456");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
